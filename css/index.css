@@ -1,0 +1,134 @@
+body{
+    background-color: #F8FCFF;
+}
+hr{
+
+    width: 90%;
+    color: #000;
+}
+
+#wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: #ffff;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  
+}
+
+#sidebar-wrapper .sidebar-heading img{
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+#menu-toggle img{
+    width: 50%;
+    height: 50%;
+    
+}
+
+.carrito{
+    width: 50%;
+    max-width: 25px;
+}
+
+.imguser{
+    width: 40%;
+    height: 40%;
+}
+.img-tam{
+    width: 80%;
+    height: 80%;
+}
+.img-tam-ind{
+    width: 80%;
+    height: 80%;
+}
+
+.margin{
+    margin-left: 5%;
+}
+
+.bg-ft-card{
+    background-color: #067EAD30;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-radius{
+    border-radius:  20px 20px 20px 20px !important; 
+    -moz-border-radius: 20px 20px 20px 20px !important;
+    -webkit-border-radius: 20px 20px 20px 20px !important;
+}
+.cf-border-radius{
+    border-radius:  0px 0px 20px 20px !important; 
+    -moz-border-radius: 0px 0px 20px 20px !important;
+    -webkit-border-radius: 0px 0px 20px 20px !important;
+}
+
+.shadow-card{
+    box-shadow: 2px 2px 10px rgba(153, 153, 153, 0.384);
+}
+
+.letter-size{
+    font-size: 100%;
+}
+
+.tam{
+    width: 10%;
+}
+
+.flex-display{
+  display: flex;
+}
+
+.flex-display p{
+  margin: 0;
+}
+
+.texto-resaltado{
+  color: #067EAD;
+}

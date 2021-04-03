@@ -1,0 +1,97 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.fondo {
+    background-color: #f8fcff;
+}
+
+.text1 {
+    color: #3d3d3c;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 700px;
+    height: 400px;
+}
+
+.btn-color {
+    background-color: #46bbc1;
+}
+
+.sombras {
+    box-shadow: 2px 2px 5px #999;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+    filter: shadow(color=#999999, direction=135, strength=2);
+}
+
+.border {
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+}
+
+.centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-perfil-fondo {
+    width: 350px;
+    height: 470px;
+    z-index: 1;
+}
+
+.img-perfil-fondo {
+    width: 350px;
+    height: 470px;
+}
+
+.card-perfil {
+    width: 280px;
+    height: 420px;
+    position: absolute;
+    top: 25px;
+    left: 53px;
+    z-index: 2;
+}
+
+.img-perfil {
+    width: 250px;
+    height: 250px;
+    top: 25px;
+}
+
+.text-error {
+    color: rgb(253, 46, 46);
+}
+
+.text-succ {
+    color: rgb(4, 255, 4);
+}
+
+.foto-perfil {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.navbar-nav>li {
+    float: none;
+    display: inline-block;
+}
