@@ -7,18 +7,18 @@
     <?php
         include("../components/head.php");
     ?>
-    <title>Lumina inicio sesión</title>
+    <title>Perfil- Editar datos</title>
 </head>
 <body>
     <!--Navbar-->
     <?php
-            include("../components/nav_log_reg.php");
+            include("../components/nav_perfil.php");
         ?>
     <!--Navbar-->
 
     <br><br>
     <div class="container" style="color: #f8fcff;">
-        <h4 class="text-center text1">Por favor ingresa tu número de teléfono</h4>
+        <h4 class="text-center text1">Editar datos</h4>
         <br>
         <div class="container">
             <div class="row">
@@ -26,11 +26,17 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario1" name="formulario" class="col-12" action="" method="POST" target="request">
+                            <form id="formulario" name="formulario" class="col-12" action="" method="POST" target="request">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="452-123-4567" name="telefono" />
+                                    <input type="file" name="sfoto" id="sfoto">
                                 </div>
-                                <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">ENVIAR</button>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Número de teléfono" name="telefono" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Contraseña" name="pass" />
+                                </div>
+                                <input id="btn" name="btn" type="button" class="form-control btn-color" style="color: #FFFFFF;" value="EDITAR"/>
                             </form>
                         </div>
                     </div>
@@ -47,6 +53,5 @@
         include("../components/footer.php");
     ?>
     <!--Footer-->
-    
 </body>
 </html>
