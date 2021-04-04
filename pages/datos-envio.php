@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include('../config/conexion.php');
+    $sesion = $_SESSION['email'];
+
+    if(!isset($sesion)){
+        echo "Error";
+    }else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,3 +91,6 @@
     <!--Footer-->
 </body>
 </html>
+<?php
+    }
+?>

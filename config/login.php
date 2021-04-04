@@ -10,7 +10,7 @@
     if($array['contar'] > 0 ){
         $_SESSION['id_usuario'] = $id;
         $_SESSION['email'] = $correo;
-        header("location: ../pages/principal_ecommerce.php");
+        header("location: ../pages/perfil.php");
     }else{
         echo "<h1 class='text-error' >datos incorrectos </h1> <br> ";
     }
