@@ -13,14 +13,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/rEnvios.js"></script>
     <?php
+        include("../components/imports_js.php");
         include("../components/head.php");
     ?>
+    <script src="../js/rEnvios.js"></script>
     <title>Perfil - datos de envío</title>
 </head>
 <body>
-    <!--Navbar-->
+    <!--Navbar  https://code.jquery.com/jquery-3.5.0.min.js -->
     <?php
             include("../components/nav_perfil.php");
         ?>
@@ -36,7 +37,7 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario" name="formulario" class="col-12" method="POST" target="request">
+                            <form id="formulario" name="formulario" class="col-12" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Estado" name="estado" id="estado"/>
                                     <div id ="estadoDiv"></div>
@@ -73,7 +74,7 @@
                                     <input type="text" class="form-control" placeholder="Número de teléfono" name="telefono" id="telefono" />
                                     <div id ="telefonoDiv"></div>
                                 </div>
-                                <input id="btn" name="btn" type="button" class="form-control btn-color" style="color: #FFFFFF;" value="REGISTRAR"/>
+                                <input id="boton" name="boton" type="button" class="form-control btn-color" style="color: #FFFFFF;" value="REGISTRAR"/>
                             </form>
                         </div>
                     </div>
@@ -85,7 +86,6 @@
     <!--Formulario de agregar datos de envío-->
     <!--Footer-->
     <?php 
-        include("../components/imports_js.php");
         include("../components/footer.php");
     ?>
     <!--Footer-->

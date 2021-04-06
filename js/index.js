@@ -3,10 +3,5 @@ $(document).ready(function() {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    sumar();
     $('.collapse').collapse();
 });
-
-function sumar() {
-    document.getElementById('#up').stepUp();
-}

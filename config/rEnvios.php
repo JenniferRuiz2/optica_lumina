@@ -6,6 +6,7 @@
     $result = mysqli_query($conn,$sql) or die("database error:". mysqli_errno($conn));
     $array = mysqli_fetch_assoc($result);
     $usuario = $array['id_usuario'];
+    echo $usuario;
     $estado = $_POST['estado'];
     $ciudad = $_POST['ciudad'];
     $colonia = $_POST['colonia'];
@@ -16,7 +17,9 @@
     $referencia = $_POST['referencia'];
     $telefono = $_POST['telefono'];
 
-    $sql = "UPDATE usuarios SET telefono = '$telefono', estado = '$estado', ciudad = '$ciudad', calle = '$calle', numero = '$numero', entreCalles = '$ecalles', referencia = '$referencia', codigoPostal = '$cp', colonia = '$colonia' WHERE id_usuario = '$usuario'";
+    $sql = "UPDATE usuarios SET telefono = '$telefono', estado = '$estado', ciudad = '$ciudad', calle = '$calle',
+     numero = '$numero', entreCalles = '$ecalles', referencia = '$referencia', 
+     codigoPostal = '$cp', colonia = '$colonia' WHERE id_usuario = '$usuario'";
 
     if(mysqli_query($conn, $sql)){
         echo json_encode(array("statusCode"=>200));

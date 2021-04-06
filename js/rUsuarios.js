@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function() {
     registroUsuarios();
 });
 
-function registroUsuarios(){
-    $("#btn").click(function(){
+function registroUsuarios() {
+    $("#btn").click(function() {
         var nombre = $("#nombre").val();
         var apellidoP = $("#apellidop").val();
         var apellidoM = $("#apellidom").val();
@@ -11,9 +11,9 @@ function registroUsuarios(){
         var user = $("#user").val();
         var pass = $("#pass").val();
 
-        if(nombre != "" && apellidoP != "" && apellidoM != "" && sexo != "" && user != "" && pass != ""){
+        if (nombre != "" && apellidoP != "" && apellidoM != "" && sexo != "" && user != "" && pass != "") {
             $.ajax({
-                url: "config/rUsuarios.php",
+                url: "../config/rUsuarios.php",
                 type: "POST",
                 timeout: 2000,
                 async: true,
@@ -26,17 +26,17 @@ function registroUsuarios(){
                     pass: pass
                 },
                 cache: false,
-                success: function(respuesta){
+                success: function(respuesta) {
                     var respuesta = JSON.parse(respuesta);
                     if (respuesta.statusCode == 200) {
-                        console.log('success->'+respuesta);
-                    } else if(respuesta.statusCode == 201){
+                        console.log('success->' + respuesta);
+                    } else if (respuesta.statusCode == 201) {
                         console.log('Error js');
                     }
 
                 }
             });
-        }else{
+        } else {
             console.log('llena todos los campos animal');
         }
 

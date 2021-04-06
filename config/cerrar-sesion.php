@@ -1,6 +1,6 @@
 <?php
     session_start();
     session_destroy();
-    header("location: ../inicio-sesion.php");
+    header("location: ../pages/principal_ecommerce.php");
     exit();
 ?>

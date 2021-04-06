@@ -1,22 +1,23 @@
-$(document).ready(function () {
+$(document).ready(function() {
     registroDatosEnvios();
 });
 
-function registroDatosEnvios(){
-    $("#btn").click(function(){
-        var estado = $("#estado");
-        var ciudad = $("#ciudad");
-        var colonia = $("#colonia");
-        var calle = $("#calle");
-        var numero = $("#numero");
-        var cp = $("#cp");
-        var ecalles = $("#ecalles");
-        var referencia = $("#referencia");
-        var telefono = $("#telefono");
- 
-        if (estado != " " && ciudad !=" " && colonia != " " && calle != " " && numero != " " && cp != " " && ecalles != " " && referencia != " " && telefono != " ") {
+function registroDatosEnvios() {
+    $('#boton').click(function() {
+        var estado = $("#estado").val();
+        var ciudad = $("#ciudad").val();
+        var colonia = $("#colonia").val();
+        var calle = $("#calle").val();
+        var numero = $("#numero").val();
+        var cp = $("#cp").val();
+        var ecalles = $("#ecalles").val();
+        var referencia = $("#referencia").val();
+        var telefono = $("#telefono").val();
+
+        if (estado != " " && ciudad != " " && colonia != " " && calle != " " && numero != " " &&
+            cp != " " && ecalles != " " && referencia != " " && telefono != " ") {
             $.ajax({
-                url: "config/rEnvios.php",
+                url: "../config/rEnvios.php",
                 type: "POST",
                 timeout: 2000,
                 async: true,
@@ -32,11 +33,11 @@ function registroDatosEnvios(){
                     telefono: telefono
                 },
                 cache: false,
-                success: function(respuesta){
+                success: function(respuesta) {
                     var respuesta = JSON.parse(respuesta);
                     if (respuesta.statusCode == 200) {
-                        console.log('success->'+respuesta);
-                    } else if(respuesta.statusCode == 201){
+                        console.log('success->' + respuesta);
+                    } else if (respuesta.statusCode == 201) {
                         console.log('Error js');
                     }
 
