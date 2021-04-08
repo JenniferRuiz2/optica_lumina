@@ -12,7 +12,7 @@
 <body>
     <!--Navbar-->
     <?php
-            include("../components/nav_bar.php");
+            include("../components/nav_bar_login.php");
         ?>
     <!--Navbar-->
 

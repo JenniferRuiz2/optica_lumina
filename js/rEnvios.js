@@ -14,8 +14,7 @@ function registroDatosEnvios() {
         var referencia = $("#referencia").val();
         var telefono = $("#telefono").val();
 
-        if (estado != " " && ciudad != " " && colonia != " " && calle != " " && numero != " " &&
-            cp != " " && ecalles != " " && referencia != " " && telefono != " ") {
+        if (estado != " " && ciudad != " " && colonia != " " && calle != " " && numero != " " && cp != " " && ecalles != " " && referencia != " " && telefono != " ") {
             $.ajax({
                 url: "../config/rEnvios.php",
                 type: "POST",
