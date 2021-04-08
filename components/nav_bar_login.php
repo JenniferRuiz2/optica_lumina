@@ -1,3 +1,7 @@
+<?php
+    include("../config/conexion.php");
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
     <a class="navbar-brand " href="../pages/principal_ecommerce.php"><img src="../images/FOTO_LUMINA_BIEN.png" alt="logoLumina" width="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -15,7 +19,14 @@
                     Enfermedad
                 </a>
                 <div class="dropdown-menu enfermedad" aria-labelledby="navbarDropdown">
+                <?php
                     
+                    $query = "SELECT nombre FROM categorias WHERE tipo = 'enfermedad'";
+                    $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
+                    while ($valores = mysqli_fetch_array($result)) {
+                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                    }
+                   ?>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -24,8 +35,15 @@
                     Categorias
                 </a>
                 <div class="dropdown-menu categoria" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Paquetes Oftalmicos</a>
-                   
+                  
+                   <?php
+                    
+                    $query = "SELECT nombre FROM categorias WHERE tipo = 'lente'";
+                    $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
+                    while ($valores = mysqli_fetch_array($result)) {
+                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                    }
+                   ?>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -34,7 +52,14 @@
                     Marcas
                 </a>
                 <div class="dropdown-menu marca" aria-labelledby="navbarDropdown">
+                <?php
                     
+                    $query = "SELECT nombre FROM categorias WHERE tipo = 'marca'";
+                    $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
+                    while ($valores = mysqli_fetch_array($result)) {
+                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                    }
+                   ?>
                 </div>
             </li>
         </ul>
