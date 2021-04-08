@@ -12,7 +12,7 @@
 <body>
     <!--Navbar-->
     <?php
-            include("../components/nav_perfil.php");
+            include("../components/nav_bar.php");
         ?>
     <!--Navbar-->
 

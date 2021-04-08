@@ -1,9 +1,20 @@
+<?php
+    session_start();
+    include('../config/conexion.php');
+    $sesion = $_SESSION['email'];
+
+    if(!isset($sesion)){
+        header('location: ../pages/principal_ecommerce.php');
+    }else{
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php
-        include("../components/imports_head.php")
+        include("../components/head.php");
     ?>
     <title>Lumina Optica - Carrito</title>
 </head>
@@ -107,3 +118,6 @@
 </body>
 
 </html>
+<?php
+    }
+?>

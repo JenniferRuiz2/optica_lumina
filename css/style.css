@@ -12,6 +12,10 @@ body {
     margin-bottom: 0;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .fondo {
     background-color: #f8fcff;
 }
@@ -95,3 +99,4 @@ body {
     float: none;
     display: inline-block;
 }
+

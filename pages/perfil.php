@@ -4,7 +4,7 @@
     $sesion = $_SESSION['email'];
 
     if(!isset($sesion)){
-        echo "Error";
+        header('location: ../pages/principal_ecommerce.php');
     }else{
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 <body class="fondo">
     <!--Navbar-->
     <?php
-            include("../components/nav_perfil.php");
+            include("../components/nav_bar.php");
         ?>
     <!--Navbar-->
     <br>
@@ -154,6 +154,9 @@
     </div>
     <!--Información de envío -->
     <!--Footer-->
+    <div class="container mt-3">
+        <hr>
+    </div>
     <?php 
         include("../components/imports_js.php");
         include("../components/footer.php");

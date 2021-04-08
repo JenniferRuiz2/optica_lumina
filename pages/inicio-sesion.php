@@ -49,8 +49,9 @@
             </div>
         </div>
     </div>
-    <!--Formulario de inicio-->
-    <br>
+    <div class="container mt-3">
+        <hr>
+    </div>
     <!--Footer-->
     <?php 
         include("../components/imports_js.php");
