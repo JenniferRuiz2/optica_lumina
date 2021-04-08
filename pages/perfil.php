@@ -30,7 +30,7 @@
     <!--Información del usuario-->
     <div class="container">
         <div class="row">
-            <div class="col-3 col-md">
+            <section class="col">
                 <div class="card border card-perfil-fondo">
                     <?php
                         $sql="SELECT * FROM usuarios WHERE email = '".$sesion."'";
@@ -48,8 +48,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-9 col-md">
+            </section>
+            <section class="col">
                 <h4 class="text-left">Información personal</h4>
                 <div class="row">
 
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">Cambiar contraseña</button>
-            </div>
+            </section>
         </div>
     </div>
     <!--Información del usuario-->
@@ -94,7 +94,7 @@
     <div class="container">
         <h4 class="text-left">Información de envío</h4>
         <div class="row">
-            <div class="col-3">
+            <section class="col">
                 <div class="row">
                     <div class="col-6">
                         <h6 class="text-left">Estado:</h6>
@@ -119,8 +119,8 @@
                         <p class="text-left"><?php echo $array["calle"]; ?></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-3">
+            </section>
+            <section class="col">
                 <div class="row">
                     <div class="col-6">
                         <h6 class="text-left">Número:</h6>
@@ -145,11 +145,11 @@
                         <p class="text-left"><?php echo $array["colonia"]; ?></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
+            </section>
+            <section class="col">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.927013013596!2d-101.2029829!3d19.715731299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e609c079a09%3A0x3c9bb730f267f3d0!2sCalle%20Paseo%20del%20Roble%20883%2C%20Prados%20Verdes%2C%2058110%20Morelia%2C%20Mich.!5e0!3m2!1sen!2smx!4v1615873607363!5m2!1sen!2smx"
                     width="600" height="200" class="border" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+            </section>
         </div>
     </div>
     <!--Información de envío -->
