@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+        include("../components/imports_js.php");
         include("../components/head.php");
     ?>
     <title>Perfil</title>
@@ -31,7 +32,7 @@
     <div class="container">
         <div class="row">
             <section class="col">
-                <div class="card border card-perfil-fondo">
+                <div class="card border card-perfil-fondo w-30">
                     <?php
                         $sql="SELECT * FROM usuarios WHERE email = '".$sesion."'";
                         $result = mysqli_query($conn, $sql) or die ("database error:".mysqli_errno($conn));
@@ -40,7 +41,7 @@
                     <img class="img-perfil-fondo border"
                         src="<?php echo "data:image/jpg; base64,". base64_encode($array['foto']); ?>" alt="" />
                 </div>
-                <div class="card card-perfil border">
+                <div class="card card-perfil border w-30">
                     <div class="container">
                         <img class="img-perfil border"
                             src="<?php echo "data:image/jpg; base64,". base64_encode($array['foto']); ?>" alt="" />
@@ -52,14 +53,14 @@
                     </div>
                 </div>
             </section>
-            <section class="col">
+            <section class="col w-50">
                 <h4 class="text-left">Información personal</h4>
                 <div class="row">
 
-                    <div class="col-2">
+                    <div class="col-3">
                         <h6 class="text-left">Nombre:</h6>
                     </div>
-                    <div class="col-10">
+                    <div class="col-9">
                         <p><?php echo $array["nombre"] ?></p>
                     </div>
                 </div>
@@ -100,7 +101,7 @@
         <div class="row">
             <section class="col">
                 <div class="row">
-                    <section class="col">
+                    <section class="col w-50">
                         <div class="row">
                             <div class="col-6">
                                 <h6 class="text-left">Estado:</h6>
@@ -126,7 +127,7 @@
                             </div>
                         </div>
                     </section>
-                    <section class="col">
+                    <section class="col w-50">
                         <div class="row">
                             <div class="col-6">
                                 <h6 class="text-left">Número:</h6>
@@ -156,7 +157,7 @@
                 <a class="form-control btn-color text-center" style="color: #FFFFFF;"
                     href="../pages/datos-envio.php">Editar datos de envío</a>
             </section>
-            <section class="col">
+            <section class="col w-100">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.927013013596!2d-101.2029829!3d19.715731299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e609c079a09%3A0x3c9bb730f267f3d0!2sCalle%20Paseo%20del%20Roble%20883%2C%20Prados%20Verdes%2C%2058110%20Morelia%2C%20Mich.!5e0!3m2!1sen!2smx!4v1615873607363!5m2!1sen!2smx"
                     width="600" height="200" class="border" allowfullscreen="" loading="lazy"></iframe>
@@ -169,7 +170,6 @@
         <hr>
     </div>
     <?php 
-        include("../components/imports_js.php");
         include("../components/footer.php");
     ?>
     <!--Footer-->

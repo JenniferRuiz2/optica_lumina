@@ -23,7 +23,7 @@
 <body>
     <!--Navbar  https://code.jquery.com/jquery-3.5.0.min.js -->
     <?php
-            include("../components/nav_perfil.php");
+            include("../components/nav_bar_login.php");
         ?>
     <!--Navbar-->
     <br><br>
