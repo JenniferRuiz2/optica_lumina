@@ -14,6 +14,17 @@ function registroDatosEnvios() {
         var referencia = $("#referencia").val();
         var telefono = $("#telefono").val();
 
+        console.log(estado);
+        console.log(ciudad);
+        console.log(colonia);
+        console.log(calle);
+        console.log(numero);
+        console.log(cp);
+        console.log(ecalles);
+        console.log(referencia);
+        console.log(telefono);
+
+
         if (estado != "" && ciudad != "" && colonia != "" && calle != "" && numero != "" && cp != "" && ecalles != "" && referencia != "" && telefono != "") {
             $.ajax({
                 url: "../config/rEnvios.php",
@@ -33,13 +44,12 @@ function registroDatosEnvios() {
                 },
                 cache: false,
                 success: function(respuesta) {
-                    var respuesta = JSON.parse(respuesta);
+                    var respuesta = $.parseJSON(respuesta);
                     if (respuesta.statusCode == 200) {
                         console.log('success->' + respuesta);
                     } else if (respuesta.statusCode == 201) {
                         console.log('Error js');
                     }
-
                 }
             });
         } else {

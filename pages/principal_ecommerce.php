@@ -1,11 +1,10 @@
-<<<<<<< Updated upstream
+
 <?php
     session_start();
     include('../config/conexion.php');
     //$sesion = $_SESSION['email'];
 ?>
-=======
->>>>>>> Stashed changes
+
 <!DOCTYPE html>
 <html lang="en">
 

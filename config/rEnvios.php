@@ -19,7 +19,8 @@
     $query = "UPDATE usuarios SET telefono = '$telefono', estado = '$estado', ciudad = '$ciudad', calle = '$calle', numero = '$numero', entreCalles = '$ecalles', referencia = '$referencia', codigoPostal = '$cp', colonia = '$colonia' WHERE id_usuario = '$usuario'";
 
     if(mysqli_query($conn, $query)){
-        echo json_encode(array("statusCode"=>200));
+       echo json_encode(array("statusCode"=>200));
+       
     }else{
         echo json_encode(array("statusCode"=>201));
     }
