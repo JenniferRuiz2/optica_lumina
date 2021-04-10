@@ -22,7 +22,8 @@
        echo json_encode(array("statusCode"=>200));
        
     }else{
-        echo json_encode(array("statusCode"=>201));
+        //echo json_encode(array("statusCode"=>201));
+        echo "Error" . mysqli_error($conn);
     }
     mysqli_close($conn);
 ?>
