@@ -13,54 +13,44 @@
             <li class="nav-item active">
                 <p class="nav-link ml-3 my-sm-0 font-weight-bold">Tienda en linea<span class="sr-only"></span></p>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Enfermedad
-                </a>
-                <div class="dropdown-menu enfermedad" aria-labelledby="navbarDropdown">
-                <?php
+            <li class="nav-item">
+            <select class="custom-select menuDiseas">
+                    <option selected>Categoria</option>
+                    <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'enfermedad'";
                     $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
                     while ($valores = mysqli_fetch_array($result)) {
-                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                        echo '<option value= "'.$valores["nombre"].'">'.$valores["nombre"].'</option>';
                     }
                    ?>
-                </div>
+                </select>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Categorias
-                </a>
-                <div class="dropdown-menu categoria" aria-labelledby="navbarDropdown">
-                  
-                   <?php
+            <select class="custom-select menuCategori">
+                    <option selected>Categoria</option>
+                    <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'lente'";
                     $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
                     while ($valores = mysqli_fetch_array($result)) {
-                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                        echo '<option value= "'.$valores["nombre"].'">'.$valores["nombre"].'</option>';
                     }
                    ?>
-                </div>
+                </select>
             </li>
             <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Marcas
-                </a>
-                <div class="dropdown-menu marca" aria-labelledby="navbarDropdown">
-                <?php
+            <select class="custom-select menuBrand">
+                    <option selected>Categoria</option>
+                    <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'marca'";
                     $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
                     while ($valores = mysqli_fetch_array($result)) {
-                        echo '<a class="dropdown-item" value = "'.$valores["nombre"].'">'.$valores["nombre"].'</a>';
+                        echo '<option value= "'.$valores["nombre"].'">'.$valores["nombre"].'</option>';
                     }
                    ?>
-                </div>
+                </select>
             </li>
         </ul>
         <span class="navbar-text">
