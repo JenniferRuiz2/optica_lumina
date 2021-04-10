@@ -37,21 +37,24 @@
                         $sql="SELECT * FROM usuarios WHERE email = '".$sesion."'";
                         $result = mysqli_query($conn, $sql) or die ("database error:".mysqli_errno($conn));
                         $array = mysqli_fetch_assoc($result);
+                        $rutaFoto = "../fotoUsuario/".$array["ruta"];
                     ?>
                     <img class="img-perfil-fondo border"
-                        src="<?php echo "data:image/jpg; base64,". base64_encode($array['foto']); ?>" alt="" />
+                        src="<?php echo $rutaFoto ?>" alt="" />
                 </div>
                 <div class="card card-perfil border w-30">
                     <div class="container">
                         <img class="img-perfil border"
-                            src="<?php echo "data:image/jpg; base64,". base64_encode($array['foto']); ?>" alt="" />
+                            src="<?php echo $rutaFoto ?>" alt="" />
                         <div class="card-body">
                             <h6 class="card-title text-center"><?php echo $array["nombre"] ?></h6>
                             <p class="card-text text-center"> <?php echo $array["email"]; ?> <br>+52
                                 <?php echo $array["telefono"]; ?></p>
                         </div>
                     </div>
+                    <a href="../pages/editarFoto.php" class="form-control btn-color text-center" style="color: #FFFFFF;">Editar foto</a>
                 </div>
+                
             </section>
             <section class="col w-50">
                 <h4 class="text-left">Información personal</h4>
@@ -89,7 +92,7 @@
                     </div>
                 </div>
                 <a class="form-control btn-color text-center" style="color: #FFFFFF;"
-                    href="../pages/cambiar_pass.php">Cambiar contraseña</a>
+                    href="../pages/cambiar_pass.php">Editar datos</a>
             </section>
         </div>
     </div>

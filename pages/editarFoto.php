@@ -18,7 +18,7 @@
         include("../components/imports_js.php");
         include("../components/head.php");
     ?>
-    <script src="../js/cambiarPass.js"></script>
+    <script src="../js/subirFoto.js"></script>
     <title>Perfil- Editar datos</title>
 </head>
 
@@ -42,11 +42,14 @@
                             <form id="formulario" name="formulario" class="col-12" action="" method="POST"
                                 target="request">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Número de teléfono" name="telefono" id="telefono" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Contraseña" name="pass"
-                                        id="pass" />
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="text1"> Agrega una foto </p>
+                                        </div>
+                                        <div class="col">
+                                            <input type="file" name="foto" id="foto">
+                                        </div>
+                                    </div>
                                 </div>
                                 <input id="btn" name="btn" type="button" class="form-control btn-color"
                                     style="color: #FFFFFF;" value="EDITAR" />
