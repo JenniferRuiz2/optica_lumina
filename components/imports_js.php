@@ -7,3 +7,4 @@
     </script>
     <script src="../js/index.js"></script>
     <script src="../js/get_productos.js"></script>
+    <script src="../js/get_data_product.js"></script>

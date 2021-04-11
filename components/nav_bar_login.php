@@ -14,8 +14,8 @@
                 <p class="nav-link ml-3 my-sm-0 font-weight-bold">Tienda en linea<span class="sr-only"></span></p>
             </li>
             <li class="nav-item">
-            <select class="custom-select menuDiseas">
-                    <option selected>Categoria</option>
+            <select class="custom-select menuDiseas border-0">
+                    <option selected>Enfermedad</option>
                     <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'enfermedad'";
@@ -27,21 +27,21 @@
                 </select>
             </li>
             <li class="nav-item dropdown">
-            <select class="custom-select menuCategori">
+            <select class="custom-select menuCategori border-0">
                     <option selected>Categoria</option>
                     <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'lente'";
                     $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
                     while ($valores = mysqli_fetch_array($result)) {
-                        echo '<option value= "'.$valores["nombre"].'">'.$valores["nombre"].'</option>';
+                        echo '<option class = "border-0" value= "'.$valores["nombre"].'">'.$valores["nombre"].'</option>';
                     }
                    ?>
                 </select>
             </li>
             <li class="nav-item dropdown ">
-            <select class="custom-select menuBrand">
-                    <option selected>Categoria</option>
+            <select class="custom-select menuBrand border-0">
+                    <option selected>Marca</option>
                     <?php
                     
                     $query = "SELECT nombre FROM categorias WHERE tipo = 'marca'";
