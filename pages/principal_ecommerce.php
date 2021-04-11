@@ -16,6 +16,7 @@
         include("../components/head.php");
         
     ?>
+    <script src="../js/get_productos.js"></script>
     <title>Lumina Optica</title>
     
 </head>

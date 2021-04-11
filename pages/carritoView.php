@@ -14,6 +14,7 @@
 
 <head>
     <?php
+        include("../components/imports_js.php");
         include("../components/head.php");
     ?>
     <title>Lumina Optica - Carrito</title>
@@ -112,7 +113,7 @@
     
     <?php
         include("../components/footer.php");
-        include("../components/imports_js.php");
+       
     ?>
 
 </body>
