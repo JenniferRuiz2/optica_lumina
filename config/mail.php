@@ -33,6 +33,17 @@ $mensaje = '
 </html>
 ';
 
+// Para enviar un correo HTML, debe establecerse la cabecera Content-type
+$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$cabeceras .= 'From: Recordatorio <cumples@example.com>' . "\r\n";
+
+// Enviarlo
+$enviado=false;
+if(mail($para, $título, $mensaje, $cabeceras)){
+  $enviado=true;
+}
+
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -58,6 +69,7 @@ try {
 
     $mail->send();
     echo 'El correo se ha enviado';
+    $enviado=true;
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
