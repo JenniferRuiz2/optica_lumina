@@ -13,11 +13,11 @@
         $fecha_actual = date('Y-m-d h:m:s');
         $seconds = strtotime($fecha_actual)-strtotime($fecha);
         $minutos = $seconds /60;
-        if($minutos > 10){
+        /*if($minutos > 10){
             echo "todo correcto";
         }else{
             echo "Código vencido";
-        }
+        }*/
         $correcto = true;
     }else{
         $correcto = false;
@@ -25,15 +25,19 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+        include("../components/imports_js.php");
         include("../components/head.php");
     ?>
+    <script src="../js/cambiar_recuperarPass.js"></script>
     <title>Lumina- Cambiar contraseña</title>
 </head>
+
 <body>
     <?php 
         if($correcto){
@@ -54,14 +58,21 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario" name="formulario" class="col-12" action="../config/verificarToken.php" method="POST" target="request">
+                            <form id="formulario" name="formulario" class="col-12" method="POST" target="request">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Nueva contraseña" name="p1"  />
+                                    <input type="hidden" class="form-control" placeholder="Correo electrónico" name="email" id="email"
+                                        value="<?php echo $email;?>" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirmar contraseña" name="p2"  />
+                                    <input type="password" class="form-control" placeholder="Nueva contraseña" name="p1"
+                                        id="p1" />
                                 </div>
-                                <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">ENVIAR</button>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirmar contraseña"
+                                        name="p2" id="p2" />
+                                </div>
+                                <input id="btn" name="btn" type="button" class="form-control btn-color"
+                                    style="color: #FFFFFF;" value="Reestablecer" />
                             </form>
                         </div>
                     </div>
@@ -74,14 +85,16 @@
     <br>
     <!--Footer-->
     <?php 
-        include("../components/imports_js.php");
         include("../components/footer.php");
     ?>
     <!--Footer-->
     <?php 
         }else{
-            
+            ?>
+    <div class="alert alert-danger">Código incorrecto o vencido</div>
+    <?php
         }
     ?>
 </body>
+
 </html>
