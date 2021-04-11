@@ -51,7 +51,8 @@
                     <p>Llegados Recientemente</p>
                 </div>
                 <div class="center ">
-                    <div class='row mt-1 card-producto'>
+                    <div class="row mt-1">
+                    <div class="card-producto" id="enviardata"></div>
                     </div>
                 </div>
             </div>
