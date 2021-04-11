@@ -1,6 +1,14 @@
+<?php
+    if (isset($_GET['email']) && isset($_GET['token'])) {
+        $email = $_GET['email'];
+        $token = $_GET['token'];
+    } else {
+        header("Location: ../pages/principal_ecommerce.php");
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +16,18 @@
     <?php
         include("../components/head.php");
     ?>
-    <title>Lumina inicio sesión</title>
+    <title>Lumina- Código de recuperación</title>
 </head>
-
-<body class="fondo">
+<body>
     <!--Navbar-->
-        <?php
+    <?php
             include("../components/nav_log_reg.php");
         ?>
     <!--Navbar-->
-    <!--Formulario de inicio-->
+
     <br><br>
     <div class="container" style="color: #f8fcff;">
-        <h3 class="title text-center text1">INICIO DE SESIÓN</h3>
-        <h4 class="text-center text1">Por favor ingresa tu correo y tu contraseña</h4>
+        <h4 class="text-center text1">Por favor ingresa el código</h4>
         <br>
         <div class="container">
             <div class="row">
@@ -29,19 +35,18 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario1" name="formulario" class="col-12" action="../config/login.php" method="POST" target="request">
+                            <form id="formulario1" name="formulario" class="col-12" action="../config/verificarToken.php" method="POST" target="request">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Correo" name="user" />
+                                    <input type="number" class="form-control" placeholder="0000" name="codigo"  />
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Contraseña" name="pass" />
+                                    <input type="hidden" class="form-control" name="email" value="<?php echo $email?>" />
                                 </div>
-                                <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">ENTRAR</button>
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="token" value="<?php echo $token?>" />
+                                </div>
+                                <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">ENVIAR</button>
                             </form>
-                            <div>
-                                <p class="text1 text-center">¿No tienes una cuenta? <a href="registro.php">Crea una aquí</a> </p>
-                                <p class="text-center"> <a href="recuperar-pass.php">Olvidé mi contraseña</a> </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,15 +54,14 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3">
-        <hr>
-    </div>
+    <!--Formulario de inicio-->
+    <br>
     <!--Footer-->
     <?php 
         include("../components/imports_js.php");
         include("../components/footer.php");
     ?>
     <!--Footer-->
+    
 </body>
-
 </html>

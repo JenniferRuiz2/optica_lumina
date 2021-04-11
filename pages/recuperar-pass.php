@@ -18,7 +18,7 @@
 
     <br><br>
     <div class="container" style="color: #f8fcff;">
-        <h4 class="text-center text1">Por favor ingresa tu número de teléfono</h4>
+        <h4 class="text-center text1">Por favor ingresa tu correo electrónico</h4>
         <br>
         <div class="container">
             <div class="row">
@@ -26,9 +26,9 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario1" name="formulario" class="col-12" action="" method="POST" target="request">
+                            <form id="formulario1" name="formulario" class="col-12" action="../config/recuperarPass.php" method="POST" target="request">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="452-123-4567" name="telefono" />
+                                    <input type="email" class="form-control" placeholder="Correo electrónico" name="email"  />
                                 </div>
                                 <button type="submit" class="form-control btn-color" style="color: #FFFFFF;">ENVIAR</button>
                             </form>

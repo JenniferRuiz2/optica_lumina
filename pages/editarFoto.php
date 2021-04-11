@@ -44,10 +44,9 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="text1"> Agrega una foto </p>
-                                        </div>
-                                        <div class="col">
+                                            <p class="text1"> Agrega una foto 
                                             <input type="file" name="foto" id="foto">
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
