@@ -3,11 +3,13 @@ $(document).ready(function() {
 });
 
 function login() {
-    $("#btn").click(function() {
-        $user = $("#user").val();
-        $pass = $("#pass").val();
-        if ($user != "" && $pass != "") {
-            ajaxLogin($user, $pass);
+    $("#btn").on('click', function() {
+        var user = $("#user").val();
+        var pass = $("#pass").val();
+        console.log(user);
+        console.log(pass);
+        if (user != "" && pass != "") {
+            ajaxLogin(user, pass);
         } else {
             $("#respuesta").html("<div class='alert alert-danger' role='alert'><button type='button' " +
                 "class='close' data-dismiss='alert' arial-label='Close'><span aria-hidden='true'>&times;</span>" +
@@ -16,22 +18,23 @@ function login() {
     });
 }
 
-function ajaxLogin(user, password) {
+function ajaxLogin(user, pass) {
     $.ajax({
-        url: "../config/login.php",
         type: "POST",
-        timeout: 2000,
-        async: true,
+        url: "../config/login.php",
         data: {
             user: user,
             pass: pass
         },
-        cache: false,
-        success: function(respuesta) {
-            console.log(respuesta);
+        dataType: "dataType",
+        beforSend: function(response) {
+            console.log("Enviando datos");
         },
-        error: function(respuesta) {
-            console.log("error");
+        success: function(response) {
+
+        },
+        error: function(error) {
+            console.log('Error ->' + error);
         }
     });
 }
