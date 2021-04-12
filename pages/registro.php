@@ -29,6 +29,7 @@
             <div class="row">
                 <div class="col-2 "></div>
                 <div class="col-8 ">
+                <p id = "respuesta"></p>
                     <div class="card sombras border">
                         <div class="card-body">
                             <form id="formulario" name="formulario" class="col-12" method="post">

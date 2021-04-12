@@ -37,6 +37,7 @@
                 <div class="col-8 ">
                     <div class="card sombras border">
                         <div class="card-body">
+                            <div id = "respuesta"></div>
                             <form id="formulario" name="formulario" class="col-12" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Estado" name="estado" id="estado"/>
