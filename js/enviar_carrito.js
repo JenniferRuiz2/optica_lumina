@@ -11,13 +11,17 @@ function getData() {
         var cantidad = $('.cantidad').text();
         var existencia = $('.existencia').text();
         var precio = $('.precio').attr('value');
+        var id = $('.id').attr('value');
+        var id_armazon = $('.id-armazon').attr('value');
         $(window).attr('location','../pages/carritoView.php');
         console.log(marca);
         console.log(descrip);
         console.log(cantidad);
         console.log(existencia);
         console.log(precio);
-        enviarData(marca, descrip, cantidad, existencia, precio);
+        console.log(id);
+        console.log(id_armazon);
+        enviarData(id, id_armazon);
     });
 }
 
@@ -46,23 +50,20 @@ function cantidadDown(){
 }
 
 
-function enviarData (marca, descrip, cantidad, existencia, precio) {
+function enviarData (id, id_armazon) {
     $.ajax({
         type: "POST",
         url: "../config/enviarData.php",
         data: {
-            marca:marca,
-            descrip:descrip,
-            cantidad:cantidad,
-            existencia:existencia,
-            precio:precio
+            id,
+            id_armazon
         },
         dataType: "dataType",
         beforSend: function (response) {
-            
+            console.log('Buscando informacion...');
         },
         success: function (response) {
-            
+            console.log(response);
         },
         error: function(error) {
             console.log('Error ->' + error);

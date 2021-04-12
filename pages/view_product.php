@@ -1,6 +1,11 @@
 <?php
     include("../config/conexion.php");
     session_start();
+    $sesion = $_SESSION['email'];
+    $sql = "SELECT * FROM usuarios WHERE email = '$sesion'";
+    $res = mysqli_query($conn,$sql) or die("database error:". mysqli_errno($conn));
+    $array = mysqli_fetch_assoc($res);
+    $id = $array['id_usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -24,11 +29,17 @@
     <?php
     include("../components/nav_bar.php");
     $data = $_GET['data'];
+    
+
     $query = "SELECT * FROM armazones WHERE id_armazon = '$data'";
     $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
     while ($valores = mysqli_fetch_array($result)) {
    ?>
     <div class="container-fluid">
+    <?php
+        echo '<p class = "id" hidden = "true" value = "'.$id.'"></p>';
+        echo '<p class = "id-armazon" hidden = "true" value = "'.$data.'"></p>';
+    ?>
         <div class="border-radius shadow-card w-100 h-100 bg-white mt-5 center">
             <div class="row ">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12 center h-50 w-50">
