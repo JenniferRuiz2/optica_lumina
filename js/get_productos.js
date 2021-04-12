@@ -108,7 +108,7 @@ function agregarDiseas(responseDiseas) {
     html = "";
     for (var index = 0; index < obj.length; index++) {
         html += "<div class='col-lg-4'>";
-        html += "<a href = '#'><div class='card border-0 border-radius shadow-card' style='width: 20rem;'>";
+        html += "<a href='../pages/view_product.php?data="+obj[index].id_armazon+"><div class='card border-0 border-radius shadow-card' style='width: 20rem;'>";
         html += "<div class='card-img-top'>";
         html += "<img class='border-radius' src='../images/lentes.png' alt=''style='width: 100%;'>";
         html += "</div>";
@@ -129,16 +129,16 @@ function agregarCategori(responseCategori) {
     html = "";
     for (var index = 0; index < obj.length; index++) {
         html += "<div class='col-lg-4'>";
-        html += "<a href = '#'><div class='card border-0 border-radius shadow-card' style='width: 20rem;'>";
+        html += "<a href='../pages/view_product.php?data="+obj[index].id_armazon+"'><div class='card border-0 border-radius shadow-card ' style='width: 20rem;'>";
         html += "<div class='card-img-top'>";
         html += "<img class='border-radius' src='../images/lentes.png' alt=''style='width: 100%;'>";
         html += "</div>";
-        html += "<div class='card-body'>";
+        html += "<div class='card-body' >";
         html += "<p class='font-weight-bold text-center'>" + obj[index].modelo + "</p>";
         html += "<p class='text-center mt-0'>" + obj[index].descripcion + "</p>";
         html += "<p class='text-center mt-0'>" + obj[index].color + "</p>";
         html += "</div>";
-        html += "<div class='card-footer text-center border-0 bg-ft-card cf-border-radius'>" + obj[index].precio + "</div>";
+        html += "<div class='card-footer text-center border-0 bg-ft-card cf-border-radius' >" + obj[index].precio + "</div>";
         html += "</div></a></div>";
     }
     $(".card-producto").html(html);
