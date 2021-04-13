@@ -59,7 +59,13 @@
             <?php $sesion = $_SESSION['email']; echo $sesion;?></p></li></a>
             <li class="nav-item mr-3 mt-2"><a href="../config/cerrar-sesion.php"><p class="name-user">Cerrar sesión</p></a></li>
             <li class="nav-item mt-2" title="Mis compras">
-                <a href="../pages/carritoView.php"><img src="../images/carrito.png" width="30px"></a>
+               <?php
+               $query = "SELECT id_usuario FROM usuarios WHERE email = '$sesion'";
+               $result = mysqli_query($conn,$query) or die("database error:". mysqli_errno($conn));
+               while ($valores = mysqli_fetch_array($result)) {
+                echo '<a href="../pages/carritoView.php?kame='.trim($valores['id_usuario']).'"><img src="../images/carrito.png" width="30px"></a>';
+               }
+               ?>
             </li>
         </ul>
         </span>

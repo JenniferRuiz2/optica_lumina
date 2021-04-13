@@ -11,9 +11,10 @@ function getData() {
         var cantidad = $('.cantidad').text();
         var existencia = $('.existencia').text();
         var precio = $('.precio').attr('value');
+        var precio_total = cantidad * precio;
         var id = $('.id').attr('value');
         var id_armazon = $('.id-armazon').attr('value');
-        $(window).attr('location','../pages/carritoView.php');
+        $(window).attr('location','../pages/carritoView.php?kame='+id+'');
         console.log(marca);
         console.log(descrip);
         console.log(cantidad);
@@ -21,7 +22,7 @@ function getData() {
         console.log(precio);
         console.log(id);
         console.log(id_armazon);
-        enviarData(id, id_armazon);
+        enviarData(id, id_armazon, precio_total, cantidad);
     });
 }
 
@@ -50,13 +51,15 @@ function cantidadDown(){
 }
 
 
-function enviarData (id, id_armazon) {
+function enviarData (id, id_armazon, precio_total, cantidad) {
     $.ajax({
         type: "POST",
         url: "../config/enviarData.php",
         data: {
-            id,
-            id_armazon
+            id:id,
+            id_armazon:id_armazon,
+            precio_total:precio_total,
+            cantidad:cantidad
         },
         dataType: "dataType",
         beforSend: function (response) {
@@ -64,9 +67,11 @@ function enviarData (id, id_armazon) {
         },
         success: function (response) {
             console.log(response);
+            
         },
         error: function(error) {
             console.log('Error ->' + error);
         }
     });
 }
+
