@@ -19,6 +19,7 @@
         include("../components/imports_js.php");
         include("../components/head.php");
     ?>
+    <script src="../js/procesoPagar.js"></script>
     <title>Lumina Optica - Carrito</title>
 </head>
 <script src="../js/mostrar_carrito.js"></script>
@@ -42,7 +43,7 @@
         </div>
         <div class="precio"></div>
         <div>
-            <button class="btn btn-primary float-right mr-2">Pagar todo</button>
+            <button class="btn btn-primary float-right mr-2 payment">Pagar todo</button>
         </div>
     </div>
     <div></div>
