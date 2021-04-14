@@ -11,7 +11,8 @@ if (isset($_POST['id_usuario'])) {
              ((armazones inner join carrito) inner join usuarios)inner join categorias
               where armazones.id_armazon = carrito.id_armazon
                and usuarios.id_usuario = '$datos' 
-               and categorias.id_categoria = armazones.id_marca ;";
+               and categorias.id_categoria = armazones.id_marca
+               and carrito.id_cliente = usuarios.id_usuario  ;";
     $runQuery = mysqli_query($conn, $query);
 
     $data = array();
