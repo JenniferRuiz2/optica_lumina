@@ -30,19 +30,16 @@
                 <div class="col-2 "></div>
                 <div class="col-8 ">
                     <?php
-                        include("../config/conexion.php");
-                        $query = "SELECT MAX(id_usuario) From usuarios;";
-                        $result = mysqli_query($conn, $query);
-                        while($array = mysqli_fetch_array($result)){
+                        
                     ?>
                     <p id = "respuesta"></p>
                     <div class="card sombras border">
                         <div class="card-body">
-                            <form id="formulario" name="formulario" class="col-12" method="post">
+                            <form id="formulario" name="formulario" class="col-12">
                                 <span id="respuesta"></span>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre"/>
-                                    <div id ="nombreDiv"><?php echo $array['id_usuario'];?></div> 
+                                    <div id ="nombreDiv"></div> 
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Apellido paterno" name="apellidoP" id="apellidop" />
@@ -55,17 +52,17 @@
                                 <div class="form-group">
                                     <label class="text1" for="Sexo">Genero</label><br>
                                     <label for="sexo">
-                                        <input class="with-gap" name="sexo" id="sexo" type="radio" value="Masculino" />
+                                        <input class="with-gap" name="sexo" id="sexoM" type="radio" value="M" />
                                         <span class="text1">Masculino</span>
                                     </label>
                                     <label>
-                                        <input class="with-gap" name="sexo" id="sexo" type="radio" value="Femenino" />
+                                        <input class="with-gap" name="sexo" id="sexoF" type="radio" value="F" />
                                         <span class="text1">Femenino</span>
                                     </label>
                                     <div id="sexoDiv"></div><br/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Correo" name="user"  id="user"/>
+                                    <input type="email" class="form-control" placeholder="Correo" name="user"  id="user"/>
                                     <div id ="userDiv"></div>
                                 </div>
                                 <div class="form-group">
@@ -92,4 +89,3 @@
 </body>
 
 </html>
-<?php }?>

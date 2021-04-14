@@ -7,16 +7,20 @@ function registroUsuarios() {
         var nombre = $("#nombre").val();
         var apellidoP = $("#apellidop").val();
         var apellidoM = $("#apellidom").val();
-        var sexo = $("#sexo").val();
+        var sexo = $("input:radio[name=sexo]:checked").val();
         var user = $("#user").val();
         var pass = $("#pass").val();
 
-        if (nombre != "" && apellidoP != "" && apellidoM != "" && sexo != "" && user != "" && pass != "") {
+        console.log(nombre);
+        console.log(apellidoP);
+        console.log(apellidoM);
+        console.log(sexo);
+        console.log(user);
+        console.log(pass);
+
             $.ajax({
-                url: "../config/rUsuarios.php",
                 type: "POST",
-                timeout: 2000,
-                async: true,
+                url: "../config/rUsuarios.php",
                 data: {
                     nombre: nombre,
                     apellidoP: apellidoP,
@@ -25,20 +29,19 @@ function registroUsuarios() {
                     user: user,
                     pass: pass
                 },
-                cache: false,
-                success: function(respuesta) {
-                    var respuesta = $.parseJSON(respuesta);
-                    if (respuesta.statusCode == 200) {
-                        console.log('success->' + respuesta);
-                    } else if (respuesta.statusCode == 201) {
-                        console.log('Error js');
-                    }
-
+                dataType: "dataType",
+                beforSend: function (response) {
+                    console.log('Buscando informacion...');
+                },
+                success: function (response) {
+                    console.log(response);
+                    
+                },
+                error: function(error) {
+                    console.log('Error ->' + error);
                 }
             });
-        } else {
-            console.log('llena todos los campos animal');
-        }
+        
 
     });
 }
