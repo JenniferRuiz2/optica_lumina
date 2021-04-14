@@ -27,7 +27,7 @@ function registroUsuarios() {
                 },
                 cache: false,
                 success: function(respuesta) {
-                    var respuesta = JSON.parse(respuesta);
+                    var respuesta = $.parseJSON(respuesta);
                     if (respuesta.statusCode == 200) {
                         console.log('success->' + respuesta);
                     } else if (respuesta.statusCode == 201) {

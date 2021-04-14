@@ -8,6 +8,7 @@
     $pass = $_POST["pass"];
     //$array = array();
 
+
     $sql = "INSERT INTO usuarios(id_usuario, nombre, acceso, tipo, email, genero) 
     VALUES('1806141920','$nombre $apellidoP $apellidoM', '".
     sha1($pass)."', 'Usuario', '$user', '$sexo')";

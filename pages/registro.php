@@ -29,14 +29,20 @@
             <div class="row">
                 <div class="col-2 "></div>
                 <div class="col-8 ">
-                <p id = "respuesta"></p>
+                    <?php
+                        include("../config/conexion.php");
+                        $query = "SELECT MAX(id_usuario) From usuarios;";
+                        $result = mysqli_query($conn, $query);
+                        while($array = mysqli_fetch_array($result)){
+                    ?>
+                    <p id = "respuesta"></p>
                     <div class="card sombras border">
                         <div class="card-body">
                             <form id="formulario" name="formulario" class="col-12" method="post">
                                 <span id="respuesta"></span>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre"/>
-                                    <div id ="nombreDiv"></div>
+                                    <div id ="nombreDiv"><?php echo $array['id_usuario'];?></div> 
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Apellido paterno" name="apellidoP" id="apellidop" />
@@ -86,3 +92,4 @@
 </body>
 
 </html>
+<?php }?>
